@@ -1,4 +1,7 @@
-learning-notes
-==============
 
-learning notes for my own 
+
+系统学习编程的笔记
+
+
+2014.6.29
+
