@@ -33,3 +33,40 @@ pthread_key_create(&key, NULL)
 pthread_once_t once=Pthread_ONCE_INIT
  
 pthread_once(once,  once_func)
+
+4.  mutex cond
+ 
+mutex +cond
+ 
+mutex 互斥锁， 确保只有一个线程处理代码块
+pthread_mutex_init
+pthread_mutex_lock()
+pthread_mutex_unlock()
+ 
+ 
+cond
+ 
+pthread_cond_t
+pthread_mutex_lock()
+ 
+while(gcond){  /// 条件满足，挂起，mutex释放
+       pthread_cond_wait(&cond, &mutex);
+}
+//条件不满足了，继续走，mutext也恢复
+ 
+pthread_mutex_unlock()
+ 
+ 
+pthread_mutex_lock()
+//处理gcond
+pthread_cond_broadcast()
+pthread_mutex_unlock()
+ 
+ 
+5. mutex + cond 能多个线程协作完成任务
+
+6. sigaction(sig, struct sigaction *, NULL)
+完成信号的处理
+
+
+
